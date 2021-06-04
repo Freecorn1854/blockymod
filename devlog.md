@@ -13,7 +13,10 @@ this is the first dev log for today, see ya later!!!
 June 4 2021
 
 well the DEMO OF THE MOD IS OUT NOW but im not going to release the code yet
+
 Nubdev is leaveing from the mod rip but i did find some music that i found, we did not make the song but here the link for the song
-https://soundcloud.com/cepukka/acid-plant-medicine-c700-original
+
+SONG LINK: https://soundcloud.com/cepukka/acid-plant-medicine-c700-original
+jacknjellify YT link: https://www.youtube.com/user/jacknjellify
 
 hope you Enjoy!
