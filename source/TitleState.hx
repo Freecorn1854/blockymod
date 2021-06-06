@@ -172,7 +172,7 @@ class TitleState extends MusicBeatState
 		// logoBl.screenCenter();
 		// logoBl.color = FlxColor.BLACK;
 
-		gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
+		gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.4);
 		gfDance.frames = Paths.getSparrowAtlas('gfDanceTitle');
 		gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
 		gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
@@ -394,12 +394,11 @@ class TitleState extends MusicBeatState
 		switch (curBeat)
 		{
 			case 1:
-				createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
-			// credTextShit.visible = true;
+				createCoolText(['Freecorn1854', 'GreenyOfficial', 'sirj455', 'killerqueen bites the dust']);
+			credTextShit.visible = true;
 			case 3:
-				addMoreText('present');
-			// credTextShit.text += '\npresent...';
-			// credTextShit.addText();
+				addMoreText('Freecorn1854, GreenyOfficial, sirj455, killerqueen bites the dust presents');
+			 credTextShit.addText();
 			case 4:
 				deleteCoolText();
 			// credTextShit.visible = false;
@@ -415,7 +414,7 @@ class TitleState extends MusicBeatState
 					addMoreText('KadeDeveloper');
 				else
 				{
-					addMoreText('Newgrounds');
+					addMoreText('PC&Games');
 					ngSpr.visible = true;
 				}
 			// credTextShit.text += '\nNewgrounds';
@@ -438,13 +437,13 @@ class TitleState extends MusicBeatState
 			// credTextShit.text = "Friday";
 			// credTextShit.screenCenter();
 			case 13:
-				addMoreText('Friday');
+				addMoreText('FNF');
 			// credTextShit.visible = true;
 			case 14:
-				addMoreText('Night');
+				addMoreText('VS');
 			// credTextShit.text += '\nNight';
 			case 15:
-				addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
+				addMoreText('Blocky'); // credTextShit.text += '\nFunkin';
 
 			case 16:
 				skipIntro();
