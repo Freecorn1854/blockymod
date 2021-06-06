@@ -20,3 +20,9 @@ Nubdev is leaveing from the mod rip but i did find some music that i found, we d
 - jacknjellify YT link: https://www.youtube.com/user/jacknjellify
 
 hope you Enjoy!
+
+June 6 2021
+
+its 1:30 so i make this quick, so Greeny (discord is GreenyOfficial#6068) will be doing music/art/code, im still doing the code too fc
+
+thats all i am saying tell morn, gn!
