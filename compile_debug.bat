@@ -1,3 +1,3 @@
-cd C:\Users\Freecorn1854\Documents\GitHub\blockymod
+C:\Users\Freecorn1854\Downloads\blockymod-main
 cls
 lime test windows -debug

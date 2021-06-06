@@ -336,8 +336,8 @@ class PlayState extends MusicBeatState
 				dialogue = CoolUtil.coolTextFile(Paths.txt('roses/rosesDialogue'));
 			case 'thorns':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('thorns/thornsDialogue'));
-			case 'funny doings':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('funny doings/funny doingsDialogue'));
+			case 'bopeebo':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('bopeebo/bopeeboDialogue'));
 		}
 
 		switch(SONG.stage)
@@ -749,6 +749,30 @@ class PlayState extends MusicBeatState
 			}
 		}
 		var gfVersion:String = 'gf';
+		var p1color:Int = 0xFF3180b0;
+		var p2color:Int = 0xFFFF0000;
+		switch(SONG.player1.toLowerCase()) {
+			case 'bf-but-geo':
+				p1color = 0xFF869d89;
+		}
+		switch(SONG.player2.toLowerCase()) {
+			case 'blocky':
+				p2color = 0xFFff5b42;
+			case 'dad' | 'parents-christmas':
+				p2color = 0xFFaf66ce;
+			case 'mom' | 'mom-car':
+				p2color = 0xFFd8558e;
+			case 'spooky':
+				p2color = 0xFFd9d9d9;
+			case 'pico':
+				p2color = 0xFFb7d855;
+			case 'monster' | 'monster-christmas':
+				p2color = 0xFFf3fc6e;
+			case 'senpai' | 'senpai-angry':
+				p2color = 0xFFffaa6f;
+			case 'gf' | 'gf-christmas':
+				p2color = 0xFFa50b4d;
+		}
 
 		switch (SONG.gfVersion)
 		{
@@ -955,7 +979,7 @@ class PlayState extends MusicBeatState
 		healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 8), this,
 			'health', 0, 2);
 		healthBar.scrollFactor.set();
-		healthBar.createFilledBar(0xFFFF0000, 0xFF66FF33);
+		healthBar.createFilledBar(p2color, p1color);
 		// healthBar
 		add(healthBar);
 
@@ -1063,7 +1087,7 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'thorns':
 					schoolIntro(doof);
-				case 'funny doings':
+				case 'bopeebo':
 					schoolIntro(doof);
 				default:
 					startCountdown();
@@ -1879,10 +1903,10 @@ class PlayState extends MusicBeatState
 		else
 			iconP1.animation.curAnim.curFrame = 0;
 
-		if (healthBar.percent > 80)
-			iconP2.animation.curAnim.curFrame = 1;
-		else
-			iconP2.animation.curAnim.curFrame = 0;
+		//if (healthBar.percent > 80)
+		//	iconP2.animation.curAnim.curFrame = 1;
+		//else
+		//	iconP2.animation.curAnim.curFrame = 0;
 
 		/* if (FlxG.keys.justPressed.NINE)
 			FlxG.switchState(new Charting()); */
@@ -3523,5 +3547,3 @@ class PlayState extends MusicBeatState
 
 	var curLight:Int = 0;
 }
-
-// This mod was brought to you by Blocky's Funny Doings International.

@@ -46,7 +46,7 @@ class DialogueBox extends FlxSpriteGroup
 			case 'thorns':
 				FlxG.sound.playMusic(Paths.music('LunchboxScary'), 0);
 				FlxG.sound.music.fadeIn(1, 0, 0.8);
-			case 'funny doings':
+			case 'bopeebo':
 				FlxG.sound.playMusic(Paths.music('NewFriendly'), 0);
 				FlxG.sound.music.fadeIn(1, 0, 0.8);
 		}
@@ -90,11 +90,11 @@ class DialogueBox extends FlxSpriteGroup
 				var face:FlxSprite = new FlxSprite(320, 170).loadGraphic(Paths.image('weeb/spiritFaceForward'));
 				face.setGraphicSize(Std.int(face.width * 6));
 				add(face);
-			case 'funny doings':
+			case 'bopeebo':
 				hasDialog = true;
-				box.frames = Paths.getSparrowAtlas('speech_bubble_talking');
-				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal', 24, false);
-				box.animation.addByIndices('normal', 'speech bubble normal', [-100], "", 24);
+				box.frames = Paths.getSparrowAtlas('weeb/pixelUI/dialogueBox-pixel');
+				box.animation.addByPrefix('normalOpen', 'Text Box Appear', 24, false);
+				box.animation.addByIndices('normal', 'Text Box Appear', [4], "", 24);
 		}
 
 		this.dialogueList = dialogueList;
@@ -113,10 +113,10 @@ class DialogueBox extends FlxSpriteGroup
 		portraitLeft.visible = false;
 	}	
 	
-	if (PlayState.SONG.song.toLowerCase()=='funny doings')
+	if (PlayState.SONG.song.toLowerCase()=='bopeebo')
 		{
 			portraitLeft = new FlxSprite(-20, 40);
-			portraitLeft.frames = Paths.getSparrowAtlas('weeb/senpaiPortrait');
+			portraitLeft.frames = Paths.getSparrowAtlas('blockyPortrait');
 			portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
 			portraitLeft.setGraphicSize(Std.int(portraitLeft.width * PlayState.daPixelZoom * 0.9));
 			portraitLeft.updateHitbox();

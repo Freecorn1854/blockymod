@@ -33,12 +33,12 @@ class StoryMenuState extends MusicBeatState
 
 	var weekCharacters:Array<Dynamic> = [
 		['', 'bf', 'gf'],
-		['dad', 'bf', 'gf'],
+		['blocky', 'bf', 'gf'],
 	];
 
 	var weekNames:Array<String> = [
 		"",
-		"VS Blocky",
+		"Blocky's Funny Doings International",
 	];
 
 	var txtWeekTitle:FlxText;
