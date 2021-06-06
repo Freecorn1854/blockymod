@@ -336,8 +336,8 @@ class PlayState extends MusicBeatState
 				dialogue = CoolUtil.coolTextFile(Paths.txt('roses/rosesDialogue'));
 			case 'thorns':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('thorns/thornsDialogue'));
-			case 'bopeebo':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('bopeebo/bopeeboDialogue'));
+			case 'funny doings':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('funny doings/funny doingsDialogue'));
 		}
 
 		switch(SONG.stage)
@@ -1063,7 +1063,7 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'thorns':
 					schoolIntro(doof);
-				case 'bopeebo':
+				case 'funny doings':
 					schoolIntro(doof);
 				default:
 					startCountdown();
@@ -1879,10 +1879,10 @@ class PlayState extends MusicBeatState
 		else
 			iconP1.animation.curAnim.curFrame = 0;
 
-		//if (healthBar.percent > 80)
-		//	iconP2.animation.curAnim.curFrame = 1;
-		//else
-		//	iconP2.animation.curAnim.curFrame = 0;
+		if (healthBar.percent > 80)
+			iconP2.animation.curAnim.curFrame = 1;
+		else
+			iconP2.animation.curAnim.curFrame = 0;
 
 		/* if (FlxG.keys.justPressed.NINE)
 			FlxG.switchState(new Charting()); */
@@ -3523,3 +3523,5 @@ class PlayState extends MusicBeatState
 
 	var curLight:Int = 0;
 }
+
+// This mod was brought to you by Blocky's Funny Doings International.
