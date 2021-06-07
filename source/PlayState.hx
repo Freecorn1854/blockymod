@@ -336,8 +336,8 @@ class PlayState extends MusicBeatState
 				dialogue = CoolUtil.coolTextFile(Paths.txt('roses/rosesDialogue'));
 			case 'thorns':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('thorns/thornsDialogue'));
-			case 'bopeebo':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('bopeebo/bopeeboDialogue'));
+			case 'funny doings':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('funny doings/funny doingsDialogue'));
 		}
 
 		switch(SONG.stage)
@@ -1087,7 +1087,7 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'thorns':
 					schoolIntro(doof);
-				case 'bopeebo':
+				case 'funny doings':
 					schoolIntro(doof);
 				default:
 					startCountdown();
