@@ -53,7 +53,7 @@ class DialogueBox extends FlxSpriteGroup
 				FlxG.sound.music.fadeIn(1, 0, 0.8);
 		}
 
-		var gaming:Bool = PlayState.SONG.song.toLowerCase() != 'funny doings'; // && PlayState.SONG.song.toLowerCase() != 'b-lo-fight' && PlayState.SONG.song.toLowerCase() != 'overhead' && PlayState.SONG.song.toLowerCase() != 'b-overhead' && PlayState.SONG.song.toLowerCase() != 'b-ballistic' && PlayState.SONG.song.toLowerCase() != 'ballistic';
+		var gaming:Bool = PlayState.SONG.song.toLowerCase() != 'funny doings';
 
 
 		if (gaming)
@@ -112,7 +112,7 @@ class DialogueBox extends FlxSpriteGroup
 				var face:FlxSprite = new FlxSprite(320, 170).loadGraphic(Paths.image('weeb/spiritFaceForward'));
 				face.setGraphicSize(Std.int(face.width * 6));
 				add(face);
-			case 'funny doings': // | 'overhead' | 'ballistic' | 'lo-fight-b-side' | 'overhead-b-side' | 'ballistic-b-side':
+			case 'funny doings':
 				hasDialog = true;
 				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
 				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
@@ -166,16 +166,6 @@ class DialogueBox extends FlxSpriteGroup
 					{
 						case 'funny doings':
 							portraitLeft.animation.addByPrefix('enter', 'Whitty Portrait Normal', 24, false);
-						//case 'lo-fight-b-side':
-						//	portraitLeft.animation.addByPrefix('enter', 'Whitty Portrait Normal', 24, false);
-						//case 'overhead':
-						//	portraitLeft.animation.addByPrefix('enter', 'Whitty Portrait Agitated', 24, false);
-						//case 'overhead-b-side':
-						//	portraitLeft.animation.addByPrefix('enter', 'Whitty Portrait Agitated', 24, false);
-						//case 'ballistic':
-						//	portraitLeft.animation.addByPrefix('enter', 'Whitty Portrait Crazy', 24, true);
-						//case 'ballistic-b-side':
-						//	portraitLeft.animation.addByPrefix('enter', 'Whitty Portrait Crazy', 24, true);
 					}
 
 					portraitLeft.antialiasing = true;
@@ -187,15 +177,6 @@ class DialogueBox extends FlxSpriteGroup
 					portraitRight = new FlxSprite(800, FlxG.height - 489);
 					portraitRight.frames = Paths.getSparrowAtlas('boyfriendPort');
 					portraitRight.animation.addByPrefix('enter', 'BF portrait enter', 24, true);
-					portraitRight.antialiasing = true;
-					portraitRight.updateHitbox();
-					portraitRight.scrollFactor.set();
-					add(portraitRight);
-					portraitRight.visible = false;
-
-					portraitRight = new FlxSprite(800, FlxG.height - 489);
-					portraitRight.frames = Paths.getSparrowAtlas('gfPort');
-					portraitRight.animation.addByPrefix('enter', 'GF portrait enter', 24, true);
 					portraitRight.antialiasing = true;
 					portraitRight.updateHitbox();
 					portraitRight.scrollFactor.set();
@@ -371,8 +352,9 @@ class DialogueBox extends FlxSpriteGroup
 					portraitRight.animation.play('enter');
 					swagDialogue.sounds =  [FlxG.sound.load(Paths.sound('pixelText'), 0.6)];
 				}
-			case 'gf':
+			case 'ACKACKACKAKAKCAKACKCKCAKCAKCAKCAKCAKCAKCAKACKCAKCJICJKHEJCKWECWJENCHJK':
 				// greeny help me
+                                // Okay, now that I see this code, we can make Girlfriend talk, but I can't be bothered right now, I haven't have lunch
 				portraitLeft.visible = false;
 				if (!portraitRight.visible)
 				{
@@ -381,6 +363,11 @@ class DialogueBox extends FlxSpriteGroup
 					portraitRight.animation.play('enter');
 					swagDialogue.sounds =  [FlxG.sound.load(Paths.sound('pixelText'), 0.6)];
 				}
+                        
+                        case 'none':
+				// Mostly for "Blocky funny doings international" or whatever the frick it's called
+				portraitLeft.visible = false;
+                                portraitRight.visible = false;
 		}
 	}
 
