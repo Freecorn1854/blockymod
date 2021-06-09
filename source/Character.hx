@@ -156,6 +156,25 @@ class Character extends FlxSprite
 				addOffset("singDOWN", 53, -21);
 
 				playAnim('idle');
+                        case 'blocky-mad':
+				// MAD BLOCKY ANIMATION LOADING CODE
+				tex = Paths.getSparrowAtlas('characters/blockmad');
+				frames = tex;
+				animation.addByPrefix('danceLeft', 'dance1', 24);
+				animation.addByPrefix('danceRight', 'dance2', 24);
+				animation.addByPrefix('singUP', 'up', 24);
+				animation.addByPrefix('singRIGHT', 'right', 24);
+				animation.addByPrefix('singDOWN', 'down', 24);
+				animation.addByPrefix('singLEFT', 'left', 24);
+
+				addOffset('danceLeft');
+				addOffset('danceRight');
+				addOffset("singUP", 60, 51);
+				addOffset("singRIGHT", -105, 1);
+				addOffset("singLEFT", 154, 23);
+				addOffset("singDOWN", -22, -24);
+
+				playAnim('danceRight');
 			case 'spooky':
 				tex = Paths.getSparrowAtlas('characters/spooky_kids_assets');
 				frames = tex;
@@ -622,6 +641,14 @@ class Character extends FlxSprite
 						else
 							playAnim('danceLeft');
 					}
+
+				case 'blocky-mad':
+						danced = !danced;
+
+						if (danced)
+							playAnim('danceRight');
+						else
+							playAnim('danceLeft');
 
 				case 'spooky':
 					danced = !danced;

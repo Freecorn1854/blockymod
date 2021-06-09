@@ -1,6 +1,5 @@
 bf
 dad
-blocky
 gf
 spooky
 pico
@@ -16,3 +15,5 @@ bf-pixel
 senpai
 senpai-angry
 spirit
+blocky
+blocky-mad
