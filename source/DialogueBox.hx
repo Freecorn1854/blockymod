@@ -1,3 +1,4 @@
+
 package;
 
 import flixel.FlxG;
@@ -11,8 +12,6 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 
 using StringTools;
-
-//wit code lol
 
 class DialogueBox extends FlxSpriteGroup
 {
@@ -48,12 +47,9 @@ class DialogueBox extends FlxSpriteGroup
 			case 'thorns':
 				FlxG.sound.playMusic(Paths.music('LunchboxScary'), 0);
 				FlxG.sound.music.fadeIn(1, 0, 0.8);
-			case 'funny doings':
-				FlxG.sound.playMusic(Paths.music('new_friendly'), 0);
-				FlxG.sound.music.fadeIn(1, 0, 0.8);
 		}
 
-		var gaming:Bool = PlayState.SONG.song.toLowerCase() != 'funny doings';
+		var gaming:Bool = PlayState.SONG.song.toLowerCase() != 'recovery' && PlayState.SONG.song.toLowerCase() != 'funny doings' && PlayState.SONG.song.toLowerCase() != 'prank';
 
 
 		if (gaming)
@@ -112,7 +108,7 @@ class DialogueBox extends FlxSpriteGroup
 				var face:FlxSprite = new FlxSprite(320, 170).loadGraphic(Paths.image('weeb/spiritFaceForward'));
 				face.setGraphicSize(Std.int(face.width * 6));
 				add(face);
-			case 'funny doings':
+			case 'recovery' | 'funny doings' | 'prank':
 				hasDialog = true;
 				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
 				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
@@ -166,6 +162,10 @@ class DialogueBox extends FlxSpriteGroup
 					{
 						case 'funny doings':
 							portraitLeft.animation.addByPrefix('enter', 'Whitty Portrait Normal', 24, false);
+						case 'recovery':
+							portraitLeft.animation.addByPrefix('enter', 'Whitty Portrait Normal', 24, false);
+						case 'prank':
+							portraitLeft.animation.addByPrefix('enter', 'Whitty Portrait Crazy', 24, true);
 					}
 
 					portraitLeft.antialiasing = true;
@@ -188,7 +188,7 @@ class DialogueBox extends FlxSpriteGroup
 			}
 
 
-			if (PlayState.SONG.song.toLowerCase() != 'funny doings') // && PlayState.SONG.song.toLowerCase() != 'overhead' && PlayState.SONG.song.toLowerCase() != 'ballistic')
+			if (PlayState.SONG.song.toLowerCase() != 'recovery' && PlayState.SONG.song.toLowerCase() != 'funny doings' && PlayState.SONG.song.toLowerCase() != 'prank')
 			{
 				handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic(Paths.image('weeb/pixelUI/hand_textbox'));
 				add(handSelect);
@@ -225,8 +225,8 @@ class DialogueBox extends FlxSpriteGroup
 			swagDialogue.antialiasing = true;
 		}
 
-		if (PlayState.SONG.song.toLowerCase() != 'funny doings') // && PlayState.SONG.song.toLowerCase() != 'b-lo-fight' && PlayState.SONG.song.toLowerCase() != 'overhead' && PlayState.SONG.song.toLowerCase() != 'b-overhead')
-			swagDialogue.sounds = [FlxG.sound.load(Paths.sound('pixelText'), 0.6)];
+		//if (PlayState.SONG.song.toLowerCase() != 'lo-fight' && PlayState.SONG.song.toLowerCase() != 'b-lo-fight' && PlayState.SONG.song.toLowerCase() != 'overhead' && PlayState.SONG.song.toLowerCase() != 'b-overhead')
+		//	swagDialogue.sounds = [FlxG.sound.load(Paths.sound('pixelText'), 0.6)];
 		//else if (PlayState.SONG.song.toLowerCase() == 'ballistic' || PlayState.SONG.song.toLowerCase() == 'b-ballistic')
 		//	swagDialogue.sounds = [FlxG.sound.load(Paths.sound('ballistic', 'shared'), 0.6)];
 		//else
@@ -256,7 +256,7 @@ class DialogueBox extends FlxSpriteGroup
 			dropText.color = FlxColor.BLACK;
 		}
 
-		dropText.text = swagDialogue.text;
+		 dropText.text = swagDialogue.text;
 
 		if (box.animation.curAnim != null)
 		{
@@ -341,7 +341,7 @@ class DialogueBox extends FlxSpriteGroup
 					//if (PlayState.SONG.song.toLowerCase() == 'ballistic')
 					//	swagDialogue.sounds =  [FlxG.sound.load(Paths.sound('ballistic', 'shared'), 0.6)];
 					//else if (PlayState.SONG.song.toLowerCase() == 'lo-fight' || PlayState.SONG.song.toLowerCase() == 'overhead')
-						swagDialogue.sounds =  [FlxG.sound.load(Paths.sound('pixelText'), 0.6)];
+					//	swagDialogue.sounds =  [FlxG.sound.load(Paths.sound('whitty', 'shared'), 0.6)];
 				}
 			case 'bf':
 				portraitLeft.visible = false;
@@ -352,22 +352,6 @@ class DialogueBox extends FlxSpriteGroup
 					portraitRight.animation.play('enter');
 					swagDialogue.sounds =  [FlxG.sound.load(Paths.sound('pixelText'), 0.6)];
 				}
-			case 'ACKACKACKAKAKCAKACKCKCAKCAKCAKCAKCAKCAKCAKACKCAKCJICJKHEJCKWECWJENCHJK':
-				// greeny help me
-                                // Okay, now that I see this code, we can make Girlfriend talk, but I can't be bothered right now, I haven't have lunch
-				portraitLeft.visible = false;
-				if (!portraitRight.visible)
-				{
-					portraitRight.visible = true;
-					trace('gf pog!!!');
-					portraitRight.animation.play('enter');
-					swagDialogue.sounds =  [FlxG.sound.load(Paths.sound('pixelText'), 0.6)];
-				}
-                        
-                        case 'none':
-				// Mostly for "Blocky funny doings international" or whatever the frick it's called
-				portraitLeft.visible = false;
-                                portraitRight.visible = false;
 		}
 	}
 

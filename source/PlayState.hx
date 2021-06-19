@@ -338,6 +338,10 @@ class PlayState extends MusicBeatState
 				dialogue = CoolUtil.coolTextFile(Paths.txt('thorns/thornsDialogue'));
 			case 'funny doings':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('funny doings/funny doingsDialogue'));
+			case 'recovery':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('recovery/recoveryDialogue'));
+			case 'prank':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('prank/prankDialogue'));
 		}
 
 		switch(SONG.stage)
@@ -1119,6 +1123,11 @@ case 'blockangry':
 				case 'thorns':
 					schoolIntro(doof);
 				case 'funny doings':
+					schoolIntro(doof);
+					FlxG.sound.play(Paths.sound('ANGRY'));
+				case 'prank':
+					schoolIntro(doof);
+				case 'recovery':
 					schoolIntro(doof);
 				default:
 					startCountdown();
