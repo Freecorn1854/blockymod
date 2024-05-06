@@ -1,4 +1,4 @@
-Fork ok "Friday Noght Funkin Kade Engine" https://github.com/kadedev/Kade-Engine
+Fork of "Friday Noght Funkin Kade Engine" https://github.com/kadedev/Kade-Engine
 
 Edit "compile.bat" and "compile_debug.bat" to goto your code folder
 
